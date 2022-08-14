@@ -1,5 +1,5 @@
-import './App.css';
+import styles from './styles.modules.css';
 
 export const App = () => {
-  return <>Hello were getting bungholey in here guys!</>;
+  return <div className={styles.main}>Hello Chello</div>;
 };
