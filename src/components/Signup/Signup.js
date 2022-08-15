@@ -9,6 +9,7 @@ export const Signup = () => {
 
   return (
     <div className={StyleSheet.main}>
+      <h1>Sign Up</h1>
       <input
         type="email"
         value={email}
