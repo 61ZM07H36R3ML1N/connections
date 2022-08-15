@@ -9,9 +9,24 @@ export const Signup = () => {
 
   return (
     <div className={StyleSheet.main}>
-      <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-      <input type="password" value={pw} onChange={e => setPW(e.target.value)} />
-      <input type="password" value={verifypw} onChange={e => setVerifyPW(e.target.value)} />
+      <input
+        type="email"
+        value={email}
+        placeholder="Email Address"
+        onChange={e => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        value={pw}
+        placeholder="Password"
+        onChange={e => setPW(e.target.value)}
+      />
+      <input
+        type="password"
+        value={'Verify Password'}
+        placeholder="verify"
+        onChange={e => setVerifyPW(e.target.value)}
+      />
     </div>
   );
 };
