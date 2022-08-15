@@ -1,3 +1,14 @@
+import { useState } from 'react'; 
+import styles from './styles.module.css';
+
 export const Signup = () => {
-  return <>Please signup to the Welcome Gate</>;
+
+const [email, setEmail] = useState('');
+
+  return <div className={StyleSheet.main}>
+    <input
+        type="email"
+        value={}
+    />
+  </div>;
 };
