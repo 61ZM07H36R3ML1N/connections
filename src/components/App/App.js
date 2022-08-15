@@ -1,5 +1,5 @@
+import styles from './styles.module.css';
 import { Signup } from '../Signup';
-import styles from './styles.modules.css';
 
 export const App = () => {
   return (
