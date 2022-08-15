@@ -1,4 +1,4 @@
-import { Login, Signup } from '../Signup';
+import { Signup } from '../Signup';
 import styles from './styles.modules.css';
 
 export const App = () => {
