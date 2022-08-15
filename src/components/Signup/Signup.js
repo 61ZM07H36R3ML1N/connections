@@ -28,6 +28,8 @@ export const Signup = () => {
         placeholder="verify"
         onChange={e => setVerifyPW(e.target.value)}
       />
+
+      <button>Sign Up</button>
     </div>
   );
 };
