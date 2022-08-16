@@ -7,6 +7,8 @@ export const Signup = () => {
   const [pw, setPW] = useState('');
   const [verifypw, setVerifyPW] = useState('');
 
+  const [valid, setValid] = useState('false');
+
   return (
     <div className={StyleSheet.main}>
       <h1>Sign Up</h1>
@@ -29,7 +31,7 @@ export const Signup = () => {
         onChange={e => setVerifyPW(e.target.value)}
       />
 
-      <button>Sign Up</button>
+      <button disabled={!valid}>Sign Up</button>
     </div>
   );
 };
