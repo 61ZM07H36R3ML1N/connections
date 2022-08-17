@@ -21,3 +21,7 @@
   background-color: rgb(229, 58, 92);
   cursor: pointer;
 }
+.main button:disabled {
+  cursor: not-allowed;
+  background-color: grey;
+}
