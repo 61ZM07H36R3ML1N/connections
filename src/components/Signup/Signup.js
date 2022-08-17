@@ -9,7 +9,9 @@ export const Signup = () => {
 
   const [valid, setValid] = useState('false');
 
-  useEffect(() => {}, [email, pw, verifyPW]);
+  useEffect(() => {
+    setValid(email && pw && verifyPW && pw === verifyPW);
+  }, [email, pw, verifyPW]);
 
   return (
     <div className={StyleSheet.main}>
