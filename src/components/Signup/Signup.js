@@ -5,13 +5,16 @@ export const Signup = () => {
   const [email, setEmail] = useState('');
 
   const [pw, setPW] = useState('');
-  const [verifypw, setVerifyPW] = useState('');
+  const [verifyPW, setVerifyPW] = useState('');
 
   const [valid, setValid] = useState('false');
+
+  useEffect(() => {}, [email, pw, verifyPW]);
 
   return (
     <div className={StyleSheet.main}>
       <h1>Sign Up</h1>
+
       <input
         type="email"
         value={email}
