@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './styles.module.css';
+import { signupRegex } from '../../shared/service/constants';
 
 export const Signup = () => {
   const [email, setEmail] = useState('');
