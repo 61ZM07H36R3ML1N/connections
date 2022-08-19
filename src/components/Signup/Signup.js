@@ -17,7 +17,9 @@ export const Signup = () => {
 
   const signup = () => {
     if (valid) {
-      fb.auth.createUserWithEmailAndPassword(email, pw).then();
+      fb.auth
+        .createUserWithEmailAndPassword(email, pw)
+        .then(() => console.log('Signup was a Success!'));
     }
   };
 
