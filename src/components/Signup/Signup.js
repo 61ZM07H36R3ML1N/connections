@@ -17,7 +17,7 @@ export const Signup = () => {
 
   const signup = () => {
     if (valid) {
-      fb;
+      fb.auth.createUserWithEmailAndPassword(email, pw).then();
     }
   };
 
