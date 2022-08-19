@@ -37,7 +37,9 @@ export const Signup = () => {
         onChange={e => setVerifyPW(e.target.value)}
       />
 
-      <button disabled={!valid}>Sign Up</button>
+      <button onClick={signup} disabled={!valid}>
+        Sign Up
+      </button>
     </div>
   );
 };
