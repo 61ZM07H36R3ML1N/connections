@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './styles.module.css';
-import { signupRegex } from '../../shared/service/constants';
+import { emailRegex, signupRegex } from '../../shared/service/constants';
 
 export const Signup = () => {
   const [email, setEmail] = useState('');
@@ -11,7 +11,7 @@ export const Signup = () => {
   const [valid, setValid] = useState('false');
 
   useEffect(() => {
-    setValid(email && pw && verifyPW && pw === verifyPW);
+    setValid(email && emailRegex.test(email) && pw && verifyPW && pw === verifyPW);
   }, [email, pw, verifyPW]);
 
   return (
