@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './styles.module.css';
 import { emailRegex, signupRegex } from '../../shared/service/constants';
+import { fb } from '../../shared/service';
 
 export const Signup = () => {
   const [email, setEmail] = useState('');
@@ -13,6 +14,12 @@ export const Signup = () => {
   useEffect(() => {
     setValid(email && emailRegex.test(email) && pw && verifyPW && pw === verifyPW);
   }, [email, pw, verifyPW]);
+
+  const signup = () => {
+    if (valid) {
+      fb;
+    }
+  };
 
   return (
     <div className={StyleSheet.main}>
