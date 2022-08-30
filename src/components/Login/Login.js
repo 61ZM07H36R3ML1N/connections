@@ -18,7 +18,11 @@ export const Login = () => {
       setError('');
       fb.auth
         .signInWithEmailAndPassword(email, pw)
-        .then(() => console.log('Login was a Success!'))
+        .then(res => {
+          if (!res.user) {
+            setError("We're having trouble logging you in. Please try again.");
+          }
+        })
         .catch(err => {
           if (err.code === 'auth/invalid-email' || err.code === 'auth/wrong-password') {
             setError('Invalid credentials');
