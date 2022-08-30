@@ -1,26 +1,26 @@
 import styles from './styles.module.css';
+import { fb } from '../../shared/service/firebase';
+import { useEffect, useState } from 'react';
+import { emailRegex } from '../../shared/service/constants';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
   const [pw, setPW] = useState('');
-  const [verifyPW, setVerifyPW] = useState('');
   const [valid, setValid] = useState('false');
 
   useEffect(() => {
-    setValid(email && emailRegex.test(email) && pw && verifyPW && pw === verifyPW);
-  }, [email, pw, verifyPW]);
+    setValid(email && emailRegex.test(email) && pw);
+  }, [email, pw]);
 
-  const signup = () => {
+  const Login = () => {
     if (valid) {
-      fb.auth
-        .createUserWithEmailAndPassword(email, pw)
-        .then(() => console.log('Signup was a Success!'));
+      fb.auth.signInWithEmailAndPassword(email, pw).then(() => console.log('Login was a Success!'));
     }
   };
 
   return (
     <div className={StyleSheet.main}>
-      <h1>Sign Up</h1>
+      <h1>Login</h1>
 
       <input
         type="email"
@@ -34,14 +34,8 @@ export const Login = () => {
         placeholder="Password"
         onChange={e => setPW(e.target.value)}
       />
-      <input
-        type="password"
-        value={'Verify Password'}
-        placeholder="verify"
-        onChange={e => setVerifyPW(e.target.value)}
-      />
 
-      <button onClick={signup} disabled={!valid}>
+      <button onClick={Login} disabled={!valid}>
         Sign Up
       </button>
     </div>
