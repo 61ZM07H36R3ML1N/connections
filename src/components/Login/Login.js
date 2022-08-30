@@ -1,3 +1,49 @@
+import styles from './styles.module.css';
+
 export const Login = () => {
-  return <>I am the Welcome Gate</>;
+  const [email, setEmail] = useState('');
+  const [pw, setPW] = useState('');
+  const [verifyPW, setVerifyPW] = useState('');
+  const [valid, setValid] = useState('false');
+
+  useEffect(() => {
+    setValid(email && emailRegex.test(email) && pw && verifyPW && pw === verifyPW);
+  }, [email, pw, verifyPW]);
+
+  const signup = () => {
+    if (valid) {
+      fb.auth
+        .createUserWithEmailAndPassword(email, pw)
+        .then(() => console.log('Signup was a Success!'));
+    }
+  };
+
+  return (
+    <div className={StyleSheet.main}>
+      <h1>Sign Up</h1>
+
+      <input
+        type="email"
+        value={email}
+        placeholder="Email Address"
+        onChange={e => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        value={pw}
+        placeholder="Password"
+        onChange={e => setPW(e.target.value)}
+      />
+      <input
+        type="password"
+        value={'Verify Password'}
+        placeholder="verify"
+        onChange={e => setVerifyPW(e.target.value)}
+      />
+
+      <button onClick={signup} disabled={!valid}>
+        Sign Up
+      </button>
+    </div>
+  );
 };
