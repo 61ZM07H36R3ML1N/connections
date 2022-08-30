@@ -25,3 +25,7 @@
   cursor: not-allowed;
   background-color: grey;
 }
+.error {
+  margin-top: 20px;
+  font-weight: bold;
+}
