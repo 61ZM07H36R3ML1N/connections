@@ -7,6 +7,7 @@ export const Login = () => {
   const [email, setEmail] = useState('');
   const [pw, setPW] = useState('');
   const [valid, setValid] = useState('false');
+  const [error, setError] = useState('');
 
   useEffect(() => {
     setValid(email && emailRegex.test(email) && pw);
@@ -14,7 +15,18 @@ export const Login = () => {
 
   const Login = () => {
     if (valid) {
-      fb.auth.signInWithEmailAndPassword(email, pw).then(() => console.log('Login was a Success!'));
+      fb.auth
+        .signInWithEmailAndPassword(email, pw)
+        .then(() => console.log('Login was a Success!'))
+        .catch(err => {
+          if (err.code === 'auth/invalid-email' || err.code === 'auth/wrong-password') {
+            setError('Invalid credentials');
+          } else if (err.code === 'auth/user-not-found') {
+            setError('No account for this email');
+          } else {
+            setError('Something went wrong :(');
+          }
+        });
     }
   };
 
@@ -38,6 +50,8 @@ export const Login = () => {
       <button onClick={Login} disabled={!valid}>
         Login
       </button>
+
+      {error && <div className={`error-message ${styles.error}`}>{error}</div>}
     </div>
   );
 };
