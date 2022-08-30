@@ -15,6 +15,7 @@ export const Login = () => {
 
   const Login = () => {
     if (valid) {
+      setError('');
       fb.auth
         .signInWithEmailAndPassword(email, pw)
         .then(() => console.log('Login was a Success!'))
