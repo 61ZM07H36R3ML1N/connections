@@ -36,7 +36,7 @@ export const Login = () => {
       />
 
       <button onClick={Login} disabled={!valid}>
-        Sign Up
+        Login
       </button>
     </div>
   );
