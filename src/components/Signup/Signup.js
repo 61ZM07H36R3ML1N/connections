@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { emailRegex, signupRegex } from '../../shared/service/constants';
 import { fb } from '../../shared/service/firebase';
