@@ -12,7 +12,7 @@ export const App = () => {
         <></>
       ) : isAuthed ? (
         <Switch>
-          <Route exact path={['/', '/dashboard']} component={Dashboard} />
+          <Route exact path={['/', '/Dashboard']} component={Dashboard} />
           <Route exact path={['/create-page', '/edit-page/:id']} component={CreatePage} />
 
           <Route path="/page/:id" component={Page} />
